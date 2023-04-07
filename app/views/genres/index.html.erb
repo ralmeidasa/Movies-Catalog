@@ -1,0 +1,8 @@
+<%= link_to 'Cadastrar gênero', new_genre_path %>
+
+<h1> Gêneros </h1>
+<% @genres.order(:name).each do |genre| %>
+   <p><b> <%= link_to genre.name, genre_path(genre) %> </b></p>
+<% end %>
+<br>
+<%= link_to 'Voltar', @backpath %>

@@ -1,0 +1,13 @@
+<%= link_to 'Cadastrar filme', new_movie_path %>
+<h1> Filmes </h1>
+<h3> Lançados: </h3>
+<% @movies_published.each do |movie| %>
+   <p> <b><%= link_to movie.title, movie_path(movie) %> - <%= movie.release_year %> </b></p>
+<% end %>
+<br>
+
+<h3> A serem lançados: </h3>
+<% @movies_draft.each do |movie| %>
+   <p> <b><%= link_to movie.title, movie_path(movie) %> - <%= movie.release_year %> </b></p>
+<% end %>
+<%= link_to 'Voltar', @backpath %>

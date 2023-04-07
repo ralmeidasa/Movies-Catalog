@@ -1,0 +1,11 @@
+<%= link_to 'Editar Gênero', edit_genre_path %>
+<br>
+<h1> <%= @genre.name %> </h1>
+
+<% @movies.each do |movie| %>
+    <% if movie.genre_id == @genre.id %>
+        <p> <b><%= link_to movie.title, movie_path(movie) %> - <%= movie.release_year %> </b></p>
+    <% end %>
+<% end %>
+
+<%= link_to 'Voltar', @backpath %>

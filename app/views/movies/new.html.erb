@@ -1,0 +1,25 @@
+<h1> Cadastro de Filme </h1>
+
+<p class="success_register">
+    <b><%= flash[:notice] if flash[:notice] %></b>
+</p>
+
+<% if @movie.errors.any? %>
+    <div>
+        <p class="failed_register"><b><%= flash[:error] %></b></p>
+    </div>
+
+    <div>
+        <h2 id="error_explanation">Todos campos devem ser preenchidos. <%= pluralize(@movie.errors.count, "erro") %> encontrado(s):</h2>
+
+        <ul>
+            <% @movie.errors.each do |error| %>
+                <li id="error_explanation"><%= error.full_message %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
+
+<%= render 'form', movie: @movie %>
+
+<%= link_to 'Voltar', @backpath %>

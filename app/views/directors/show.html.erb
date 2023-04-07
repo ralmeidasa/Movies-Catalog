@@ -1,0 +1,11 @@
+<%= link_to 'Editar Diretor(a)', edit_director_path %>
+<br>
+<h1> <%= @director.name %> </h1>
+
+<% @movies.each do |movie| %>
+    <% if movie.director_id == @director.id %>
+        <p> <b><%= link_to movie.title, movie_path(movie) %> - <%= movie.release_year %> </b></p>
+    <% end %>
+<% end %>
+
+<%= link_to 'Voltar', @backpath %>

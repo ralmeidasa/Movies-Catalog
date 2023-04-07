@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CatalogueMovies</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application" %>
+    <style>
+      .failed_register {
+        color: red;
+      }
+
+      .success_register {
+        color: green;
+      }
+
+      #error_explanation {
+      padding: 2px;
+      color: red;
+      }
+
+      .field_with_errors {
+      padding: 2px;
+      background-color: red;
+      display: table;
+      }
+    </style>
+  </head>
+
+  <body>
+    <%= link_to 'Home', root_path %>
+    <%= yield %>
+  </body>
+</html>

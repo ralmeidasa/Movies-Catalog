@@ -1,0 +1,8 @@
+<%= link_to 'Cadastrar diretor(a)', new_director_path %>
+<h1> Diretores </h1>
+
+<% @directors.order(:name).each do |director| %>
+   <p><b> <%= link_to director.name, director_path(director) %> </b></p>
+<% end %>
+<br>
+<%= link_to 'Voltar', @backpath %>

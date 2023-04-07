@@ -1,0 +1,19 @@
+<h1> Cadastro de Diretor(a) </h1>
+
+<div>
+    <p class="failed_register"><b><%= flash[:error] if @director.errors.any? %></b></p>
+</div>
+
+<div>  
+    <% @director.errors.each do |error| %>
+        <p id="error_explanation"><%= error.full_message %></p>
+    <% end %>
+</div>
+
+<div class="success_register">
+    <p><b><%= flash[:notice] if flash[:notice] %></b></p>
+</div>
+
+<%= render 'form', director: @director %>
+
+<%= link_to 'Voltar', @backpath %>
